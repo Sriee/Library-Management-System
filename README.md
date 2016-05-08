@@ -16,7 +16,7 @@ All interfaces with the Library Management System(queries, updates, deletes, etc
 
 ### Book Search and Availability
 
-Using the GUI, users should be able to search for a book, given any combination of ISBN, title, and/or Author(s).Application should support substring matching. 
+Using the GUI, users should be able to search for a book, given any combination of _ISBN_, _title_, and/or _Author(s)_.Application should support substring matching. 
 
 The following should be displayed in the search results:
  * ISBN
@@ -34,21 +34,21 @@ The following should be displayed in the search results:
 
 #### Checking Out Books
 
- * Using the GUI,users should be able to check out a book, given the combination of **BOOK_COPIES**(Isbn, branch_id) and **BORROWER**(Card_no)
- * A new tuple should be created in **BOOK_LOANS**. Generate a new unique primary key for loan_id. The date_out should be today’s date. The due_date should be 14 days after the date_out.
+ * Using the GUI,users should be able to check out a book, given the combination of **BOOK_COPIES**(_Isbn_, _branch_id_) and **BORROWER**(_Card_no_)
+ * A new tuple should be created in **BOOK_LOANS**. Generate a new unique primary key for _loan_id_. The _date_out_ should be today’s date. The _due_date_ should be 14 days after the _date_out_.
  * Each **BORROWER** is permitted a maximum of 3 **BOOK_LOANS**. If a **BORROWER** already has 3 **BOOK_LOANS**, then the checkout (i.e. create new **BOOK_LOANS** tuple)
  should fail and return a useful error message.
- * If the number of **BOOK_LOANS** for a given book at a branch already equals the No_of_copies (i.e. There are no more book copies available at a library_branch), then the checkout should fail and return a useful error message.
+ * If the number of **BOOK_LOANS** for a given book at a branch already equals the _No_of_copies_ (i.e. There are no more book copies available at a _library_branch_), then the checkout should fail and return a useful error message.
 
 #### Checking In Books
 
- * Using the GUI,users should be able to check in a book. Be able to locate **BOOK_LOANS** tuples by searching on any of book_id, Card_no, and/or any part of **BORROWER** name. Once located, provide a way of selecting one of potentially multiple results and a button (or menu item) to check in (i.e. enter a value for date_in in corresponding BOOK_LOANS tuple).
+ * Using the GUI,users should be able to check in a book. Be able to locate **BOOK_LOANS** tuples by searching on any of _book_id_, _Card_no_, and/or any part of **BORROWER** name. Once located, provide a way of selecting one of potentially multiple results and a button (or menu item) to check in (i.e. enter a value for _date_in_ in corresponding **BOOK_LOANS** tuple).
 
 ### Borrower Management
 
  * Using the GUI,users should be able to create new borrowers in the system.
  * All name, SSN, and address attributes are required to create a new account (i.e. value must be not null).
- * You must devise a way to automatically generate new card_no primary keys for each new tuple that uses a compatible format with the existing borrower IDs.
+ * You must devise a way to automatically generate new _card_no_ primary keys for each new tuple that uses a compatible format with the existing borrower IDs.
  * Borrowers are allowed to possess exactly one library card. If a new borrower is attempted withe same SSN, then your system should reject and return a useful error message.
 
 ### Fines
@@ -58,14 +58,14 @@ The following should be displayed in the search results:
  * Fines are assessed at a rate of $0.25/day (twenty-five cents per day).
  * You should provide a button, menu item, etc. that updates/refreshes entries in the **FINES** table.
  * There are two scenarios for late books
-	 - Late books that have been returned — the fine will be [(the difference in days between the due_date and date_in) * $0.25].
-	 - Late book that are still out — the estimated fine will be [(the difference between the due_date and TODAY) * $0.25].
+	 - Late books that have been returned — the fine will be [(the difference in days between the _due_date_ and _date_in_) * $0.25].
+	 - Late book that are still out — the estimated fine will be [(the difference between the _due_date_ and _TODAY_) * $0.25].
  * If a row already exists in **FINES** for a particular late **BOOK_LOANS** record, then
-	 - If paid == FALSE, do not create a new row, only update the fine_amt if different than current value.
+	 - If paid == FALSE, do not create a new row, only update the _fine_amt_ if different than current value.
 	 - If paid == TRUE, do nothing.
  * Provide a mechanism for librarians to enter payment of fines (i.e. to update a **FINES** record where paid == TRUE)
 	 - Do not allow payment of a fine for books that are not yet returned.
-	 - Display of Fines should be grouped by card_no. i.e. SUM the fine_amt for each Borrower.
+	 - Display of Fines should be grouped by _card_no_. i.e. SUM the _fine_amt_ for each Borrower.
 	 - Display of Fines should provide a mechanism to filter out previously paid fines (either by default or choice)
 
 ## Library Schema 
@@ -88,7 +88,7 @@ The parser is responsible to import the data from **csv** files to the backend d
 
 ## Documents
  
-**[Design document](../master/Design.pdf) that describes your system architecture including design decisions and assumptions. 
+[Design document](../master/Design.pdf) that describes your system architecture including design decisions and assumptions. 
  A [Quick Start](../master/Quick Start Guide.pdf) user guide for librarian system users 
 
 ## Licence 
