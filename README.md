@@ -72,7 +72,7 @@ The following should be displayed in the search results:
 
 The Backend database for the Library Management System. Uses MySQL database for storing data. The Library Schema is shown below
 
-![alt Title] (https://cloud.githubusercontent.com/assets/8402606/15100483/da926782-1538-11e6-8370-f5eabef92f85.jpg)
+![alt Title](https://cloud.githubusercontent.com/assets/8402606/15100483/da926782-1538-11e6-8370-f5eabef92f85.jpg)
 
 ## Data 
 
